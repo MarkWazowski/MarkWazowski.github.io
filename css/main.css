@@ -1,8 +1,19 @@
 @font-face{
 	font-family: ballpark;
-	src: url(../fonts/ballpark.ttf);
+	src:url(O:/1/s/fonts/BALLW___.TTF);
 }
 
+.col-md-5>h3{
+	margin-top: 2px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+.col-md-5>p{
+margin-bottom: 29px;
+}
+
+/*для всех ссылок выделение текста отсутствует*/
 a{
 	text-decoration: none;
 }
@@ -11,25 +22,33 @@ a:hover{
 	text-decoration: none;
 }
 
+ul{
+	list-style: none;
+	
+}
+
 body{
 	font-size: 12px;
 	line-height: 1.5;
-	color: white;
+	color: #fff;
 }
 
 .top-block{
-	background: url("../img/bg-top-block.gif") repeat 0 0;
-	border-bottom: 4px solid #242424;
+	background: url(O:/1/s/img/bg-top-block.gif) repeat 0 0;
+	border-bottom: 4px solid #242424;/*4 квадрата в ФШ толщина линии*/
+	padding-bottom: 61px;
 }
 
+/*В container не нужно прописывать стили, используем бутстраповские стандартные*/
+
 header{
-	padding-top: 23px;
-	padding-bottom: 15px;
+	padding-top: 24px;
+	padding-bottom: 15px;	
 }
 
 .logo{
-	font-size: 36px;
 	color:#e0e0e0;
+	font-size: 36px;
 	font-family: ballpark;
 }
 
@@ -38,16 +57,214 @@ header{
 }
 
 nav a{
-	color: #f9f8f9;
+	color: #e8e8e8;
+	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 14px;
+	display: block;/*35 минута, элемент ссылка имел строчный тип и был прижат кверху. Делаем его блоком*/
+	
 }
 
 nav a:hover{
-color: #f9f8f9;
+	color:#e8e8e8;
 }
 
-nav li{
-	padding-right: 21px;
-	background: url(../img/bg-nav-li.png) no-repeat 100% 50%;
+/*высокая вложенность, селектор многоуровневый BS3 перебивает нашу nav li, поэтому мы делаем тоже сложную ебанину с высоким css3 приоритетом */
+nav .list-inline>li{
+	padding-right: 24px;
+	background: url(O:/1/s/img/bg-nav-li.gif) no-repeat 100% 50%;
+}
+
+nav li.active a, nav a:hover{
+	background: linear-gradient(to bottom,#282828,#2e2e2e);
+	border-radius: 3px;
+}
+
+form{
+background: #2f2f2f;
+border-top: 1px solid #252525;
+border-radius: 22px;
+padding: 1px 0;
+margin-top: 10px;
+}
+
+
+
+input[type="text"]{
+	width: 75%;
+
+}
+
+input, button{
+	background: transparent;/*цвет фона наследуется у родителя*/
+	border:none;
+	outline: none;
+}
+
+.middle-button{
+	font-size: 13px;
+	color: #ffffff;
+	text-transform: capitalize;/*текст с заглавной*/
+	background-color: #959595;
+	border:none;
+	padding: 11px 25px;
+}
+.carousel-indicators {
+	text-align: right;
+	margin: 0;
+	bottom:-15px;
+	width:70%;
+}
+
+.carousel-indicators li, .carousel-indicators .active{
+	height: 5px;
+	width: 23px;
+	border:none;
+	background: #888888;
+	border-radius: 0;
+}
+
+.carousel-indicators .active{
+	background: #bebebe;
+	margin-bottom: 1px;
+}
+
+
+.pb30 {
+	padding-bottom: 30px;
+}
+
+.middle-white-block{
+	background: #fff;
+	color: #333333;
+	padding-bottom: 50px;
+}
+
+/*What I Can All Do и прочие 3 блока. */
+.flex-block{
+	display: flex;
+	margin-left: -10px;
+    margin-right: -25px;
+}
+
+.flex-item{
+	padding: 25px;
+	margin-top: -65px;
+	background: #fff;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.flex-item h4{
+	font-size: 15px;
+	color: #171717;
+	font-weight: bold;
+}
+
+.grey{
+	color: #8e8e8e;	
+	}
+
+.read-more{
+	color: #333333;
+	text-transform: capitalize;/*текст с заглавной*/
+	font-weight: bold;
+	font-size: 12px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	background: url(O:/1/s/img/divider.png) repeat-x 0 0;/*вставляем разделитель png и репитим по иксу, задаем ему 0 0 - левый верхний угол*/
+	display: block;/*PNG была по ширене строчной, теперь по ширине всего блока*/	
+}
+
+.read-more:hover{
+	background: url(O:/1/s/img/divider-bot.png) repeat-x 0 100% #333;
+	color: #fff;
+	transition: 1.5s all;/*transition "включает" эффекты при hover, до этого вместо all было background, что меняло лишь задний фон.*/
+}
+
+/*класс w100 - width 100% картинка заполняет всю ширину ДИВа*/
+.w100{
+	width: 100%;
+}
+
+.title-recent{
+	margin-left: 25px;/*внешний отступ заголовка Recent Work*/
+	padding-bottom: 19px;/*внутренний отступ заголовка RW вместе с штриховым фоном-полоской */
+	margin-bottom: 30px;/*внеш отступ от Серого абзаца Lorem...*/
+	background: url(O:/1/s/img/divider.png) repeat-x 0 100%;
+}
+
+.recent{
+	position: relative;
+	display: block;
+	
+}
+
+.recent:hover .info{
+	display: block!important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(O:/1/s/img/bg-search.png) no-repeat 50% 40% rgba(0,0,0,.75)/*75 процентов непрозрачность в ФШ*/;	
+}
+
+.info li{
+	display: inline-block;/*блочно-строчный тип, чтобы ЛИшки шли в строчку*/
+	margin-right: 35px;
+	color: #FFF;
+	
+}
+
+.info li:last-child{
+	margin-right: 0;
+}
+
+.info ul{
+	position: absolute;/*Если у родителя значение position задано как fixed, relative или absolute, то отсчет координат ведется от края родительского элемента.*/
+	/*у нас info потомок по отношению к recent*/
+	bottom: 10px;
+}
+
+
+.mb20{
+	margin-bottom: 20px;
+}
+
+.grey-text, .bold-grey-text{
+	color: #999999;
+}
+
+.bold-grey-text{
+	font-weight: bold;
+}
+
+.top-footer{
+	background: url(O:/1/s/img/bg-top-block.gif) repeat 0 0;
+	border-top: 4px solid #242424;
+	padding: 30px 0 35px 0;
+}
+
+.footer-title{
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: bold;
+	padding-bottom: 19px;
+	border-bottom: 1px solid #686868;
+}
+
+.widget-block{
+	display: flex;/*https://html5book.ru/css3-flexbox/*/
+	justify-content: space-between;/*https://html5book.ru/css3-flexbox/#justify-content*/
+	margin-bottom: 22px;
+}
+
+.bottom-footer{
+	background: url(O:/1/s/img/bg-footer.png) repeat 0 0;
+	padding: 20px 0 20px 0;
+}
+
+.bottom-footer, .bottom-footer a{
+	line-height: 1;
 }
